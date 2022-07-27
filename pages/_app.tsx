@@ -1,8 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import ProtectRouteErrorBoundary from "../lib/protectRoute/ProtectRouteErrorBoundary";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ProtectRouteErrorBoundary>
+      <Component {...pageProps} />
+    </ProtectRouteErrorBoundary>
+  );
 }
 
-export default MyApp
+export default MyApp;
